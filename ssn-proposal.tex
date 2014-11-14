@@ -2,6 +2,7 @@
 \usepackage[affil-it]{authblk}
 %\usepackage{fullpage}
 %\usepackage[margin=1.5in]{geometry}
+\usepackage{hyperref}
 
 
 
@@ -44,7 +45,7 @@ This project focuses on the most vulnerable side of computer security: the users
 The first aim of our research would be to build a proof of concept to prove that this dataset is a hotbed for attacks waiting to be exploited. Design the appropriate patterns that will enable us to efficiently spot potential threats and confidential information. Make a statistical analysis within the mined data to determine the amount and type of sensitive data present in the database. 
 
 \section{Approach}
-Bit.ly and goo.gl both expose public Web APIs that allow to programmatically shorten long URLs but also expand their short versions and retrieve the long form urls. We will develop an API consumer that will try to exhaustively expand all possible short urls by calling the public APIs, limited by the rate limits set by these services and the project deadline. \\
+Bit.ly and goo.gl both expose public Web APIs that allow to programmatically shorten long URLs but also expand their short versions and retrieve the long form urls.\cite{bitlyapi}\cite{googleapi} We will develop an API consumer that will try to exhaustively expand all possible short urls by calling the public APIs, limited by the rate limits set by these services and the project deadline. \\
 Once enough data has been collected and we have an insight on the information that will be gathered we can start designing the patterns that we will try to mine from the dataset. After the data aggregation finishes we will apply the patterns that have been decided on the full dataset.\\
 The last part of our research will be to extract certain statistics from the data mining results and draw conclusions regarding the amount and type of sensitive data and probable security threats within the dataset. 
 Software-wise, we will use an appropriate web programming language (probably Python or Go based on how they perform) to build the data aggregating software. The services will be deployed on our assigned SNE servers.\\
@@ -82,6 +83,14 @@ The project officially starts on November 17th and its final presentation is on 
 
 \section{Ethical implications}
 All the information we will try to retrieve is publicly available on the Internet. However, we might encounter sensitive information (such as user preferences, birth dates, network configurations, etc.) in the process. That is the reason we will have to develop our crawlers and storage system in a way that the information we gather will not be leaked.\\
-Another aspect to be considered is the fact that certain services try to limit the number of hits they get from a certain IP address and may consider a big amount of traffic originating from our servers as an attack. Fortunately the two biggest url shortening services (bit.ly, goo.gl) expose web APIs through which one can retrieve the full sized versions of the URLs. The limits set by those services are 5000 concurrent connections for bit.ly and 1000000 hits per day for goo.gl. We believe that these rates will provide us with a big enough data set to conduct our research. 
+Another aspect to be considered is the fact that certain services try to limit the number of hits they get from a certain IP address and may consider a big amount of traffic originating from our servers as an attack. Fortunately the two biggest url shortening services (bit.ly, goo.gl) expose web APIs through which one can retrieve the full sized versions of the URLs. The limits set by those services are 5000 concurrent \cite{bitlyapi} connections for bit.ly and 1000000 hits per day for goo.gl \cite{googleapi}. We believe that these rates will provide us with a big enough data set to conduct our research. 
 
+\begin{thebibliography}{9}
+
+\bibitem{bitlyapi}
+Bit.ly Web API documentation, \url{http://dev.bitly.com/api.html}
+\bibitem{googleapi}
+Goo.gl Web API documentation, \url{https://developers.google.com/url-shortener/v1/getting_started}
+
+\end{thebibliography}
 \end{document}
