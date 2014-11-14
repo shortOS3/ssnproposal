@@ -36,11 +36,12 @@ We believe that these services can potentially expose unaware users to security 
 
 The questions we aim to answer in this project are the following:
 \begin{itemize}
-  \item What kind of data can be retrieved from such an attack? 
-  \item Is this information enough to be used as an entry point for other attacks?
-  \item Is there any way to narrow the dataset in order to focus the attack? (!!!!!! check again !!!!!) 
-\end{itemize}
-This project focuses on the most vulnerable side of computer security: the users themselves. Even though we will try to determine if there are vulnerabilities on the URL shorteners themselves, most of the information leakage will come from users unaware of this kind of attacks.
+  \item What kind of data can be retrieved from such an attack and how much of it can be considered sensitive?
+  \item How can we efficiently design targeted queries to be able to spot security holes can be later exploited for targeted attacks?
+  \item Is there some URL generation pattern that can lead to certain targeted attacks?
+  \end{itemize}
+This project focuses on the most vulnerable side of computer security: the users themselves. Even though we will try to determine if there are vulnerabilities on the URL shorteners themselves, most of the information leakage will come from users unaware of this kind of attacks. \\
+The first aim of our research would be to build a proof of concept to prove that this dataset is a hotbed for attacks waiting to be exploited. Design the appropriate patterns that will enable us to efficiently spot potential threats and confidential information. Make a statistical analysis within the mined data to determine the amount and type of sensitive data present in the database. 
 
 \section{Approach}
 Bit.ly and goo.gl both expose public Web APIs that allow to programmatically shorten long URLs but also expand their short versions and retrieve the long form urls. We will develop an API consumer that will try to exhaustively expand all possible short urls by calling the public APIs, limited by the rate limits set by these services and the project deadline. \\
@@ -54,27 +55,27 @@ The project officially starts on November 17th and its final presentation is on 
 \begin{table}[h]
   \begin{tabular}{|c|c|}
     \hline
-    Week  & Work \\
+    Week  & Task \\
     \hline
-    November 17th & Background research \\
+    Week 1 & Background research, familiarisation with the shortening services \\
     \hline
-    November 17th & Literature review   \\
+    Week 1 & Literature review   \\
     \hline
-    November 24th & Software development \\
+    Week 2 & Software development \\
     \hline
-    November 24th & Bulk data aggregation \\
+    Week 2  & Bulk data aggregation \\
     \hline
-    December 1st & Start designing the data mining techniques\\
+    Week 3 & Start designing the data mining techniques\\
     \hline
-    December 1st & Data aggregation finishes\\
+    Week 3 & Data aggregation finishes\\
     \hline
-    December 8th & Application of pattern search on full dataset \\
+    Week 4 & Application of pattern search on full dataset \\
     \hline
-    December 8th & Analysis of results \\
+    Week 4  & Statistical analysis of results \\
     \hline
-    December 8th & Report composition  \\
+    Week 4  & Report composition  \\
     \hline
-    December 15th & Presentation \\
+    Week 5 (Dec 15) & Presentation \\
     \hline
   \end{tabular}
 \end{table}\\
