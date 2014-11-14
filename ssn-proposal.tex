@@ -39,7 +39,7 @@ The questions we aim to answer in this project are the following:
 \begin{itemize}
   \item What kind of data can be retrieved from such an attack and how much of it can be considered sensitive?
   \item How can we efficiently design targeted queries in order to spot security holes, which can be later exploited for targeted attacks?
-  \item Is there some URL generation pattern that can lead to certain targeted attacks?
+  \item Is there a connection between the long URL and the way the short URL is formed that can reveal information that can enable more targeted attacks?
   \end{itemize}
 This project focuses on the most vulnerable side of computer security: the users themselves. Even though we will try to determine if there are vulnerabilities on the URL shorteners themselves, most of the information leakage will come from users unaware of this kind of attacks. \\
 We believe that this misuse of the URL shorteners can lead to security issues of different magnitudes and repercussions. Starting from that assumption, we will build a system to iteratively run over the full set of shortened URLs to retrieve the original URLs. From this point we will study the mined data and determine if our original assumption is correct. Depending on the data we find, this could be presented as a study to request the websites providing those services to warn their users about these risks.
