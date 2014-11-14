@@ -50,10 +50,10 @@ We believe that this misuse of the URL shorteners can lead to security issues of
 
 \section{Approach}
 Bit.ly and goo.gl both expose public Web APIs that allow to programmatically shorten long URLs but also expand their short versions and retrieve the long form urls.\cite{bitlyapi}\cite{googleapi} We will develop an API consumer that will try to exhaustively expand all possible short urls by calling the public APIs, limited by the rate limits set by these services and the project deadline. \\
-Once enough data has been collected and we have an insight on the information that will be gathered we can start designing the patterns that we will try to mine from the dataset. After the data aggregation finishes we will apply the patterns that have been decided on the full dataset.\\
+Once enough data has been collected and we have an insight on the information that will be gathered we can start designing the patterns that we will try to mine from the dataset. Such patterns, that could probably lead us to sensitive data, would be for example full names of people, username and passwords communicated in the URL, important dates (such as birthdates), google map links that could lead to a person's location and other details that can reveal the identity of a user. Further more there could be even more details to be mined that could reveal the weak points of systems such as internal IP addresses, URL parameters that give access to confidential data or even server configurations that can be exploited to perform attacks. \\
+We should clarify at this point that the analysis is to be performed solely on the URL strings without needing to look at the actual web resource.\\
 The last part of our research will be to extract certain statistics from the data mining results and draw conclusions regarding the amount and type of sensitive data and probable security threats within the dataset. 
 Software-wise, we will use an appropriate web programming language (probably Python or Go based on how they perform) to build the data aggregating software. The services will be deployed on our assigned SNE servers.\\
-\newpage
 \section{Planning}
 The project officially starts on November 17th and its final presentation is on December 15th, resulting in four working weeks. The planning for these weeks is as follows:
 \\\\
