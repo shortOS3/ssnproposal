@@ -42,7 +42,11 @@ The questions we aim to answer in this project are the following:
   \item Is there some URL generation pattern that can lead to certain targeted attacks?
   \end{itemize}
 This project focuses on the most vulnerable side of computer security: the users themselves. Even though we will try to determine if there are vulnerabilities on the URL shorteners themselves, most of the information leakage will come from users unaware of this kind of attacks. \\
-The first aim of our research would be to build a proof of concept to prove that this dataset is a hotbed for attacks waiting to be exploited. Design the appropriate patterns that will enable us to efficiently spot potential threats and confidential information. Make a statistical analysis within the mined data to determine the amount and type of sensitive data present in the database. 
+We believe that this misuse of the URL shorteners can lead to security issues of different magnitudes and repercussions. Starting from that assumption, we will build a system to iteratively run over the full set of shortened URLs to retrieve the original URLs. From this point we will study the mined data and determine if our original assumption is correct. Depending on the data we find, this could be presented as a study to request the websites providing those services to warn their users about these risks.
+
+
+
+
 
 \section{Approach}
 Bit.ly and goo.gl both expose public Web APIs that allow to programmatically shorten long URLs but also expand their short versions and retrieve the long form urls.\cite{bitlyapi}\cite{googleapi} We will develop an API consumer that will try to exhaustively expand all possible short urls by calling the public APIs, limited by the rate limits set by these services and the project deadline. \\
